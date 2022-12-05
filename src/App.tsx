@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { chakra, ChakraProvider, layout } from '@chakra-ui/react';
+import theme from './lib/theme';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+// todo : routing
+// import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <div>Hello world!</div>,
+//   },
+// ]);
 
+const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <ChakraProvider theme={theme}>
+      <Layout>
+        <Home />
+      </Layout>
+      {/* <RouterProvider router={router} /> */}
+    </ChakraProvider>
+  );
+};
 
-export default App
+export default App;
