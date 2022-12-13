@@ -1,5 +1,6 @@
-import { Flex, Box } from '@chakra-ui/react';
+import { Flex, Box, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+// import NavBar from './nav/NavBar';
 import Navbar from './Navbar';
 
 interface Props {
@@ -8,10 +9,19 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <Flex flexDir="column" bg="whitesmoke" height="100vh ">
+    // <Flex flexDir="column" bg="whitesmoke" height="100vh ">
+    <Box>
       <Navbar></Navbar>
-      <Box>{children}</Box>
-    </Flex>
+      <Container
+        borderWidth="1px"
+        maxW="container.sm"
+        borderRadius="md"
+        height="800px"
+        mt="80px"
+      >
+        {children}
+      </Container>
+    </Box>
   );
 };
 

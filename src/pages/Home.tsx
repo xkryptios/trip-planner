@@ -1,10 +1,10 @@
 import React from 'react';
-import CreateNewTripModal from '../components/CreateNewTripModal';
+import TripPanel from '../components/TripPanel';
+
 export default function Home() {
   return (
     <div>
       <div>Home!</div>
-      <CreateNewTripModal></CreateNewTripModal>
     </div>
   );
 }
