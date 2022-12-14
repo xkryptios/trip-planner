@@ -9,7 +9,6 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    // <Flex flexDir="column" bg="whitesmoke" height="100vh ">
     <Box>
       <Navbar></Navbar>
       <Container

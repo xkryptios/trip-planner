@@ -1,19 +1,17 @@
-import { Flex } from '@chakra-ui/react';
-const Navbar = () => {
+import { Box } from '@chakra-ui/react';
+const TripPanel = ({ trip }: any) => {
   return (
-    <Flex
-      color="white"
-      bg="brand.900"
-      height="10vh"
-      align="center"
-      justify="flex-start"
-      gap={200}
-      px="10"
+    <Box
+      textAlign="center"
+      height="50px"
+      bg="gray.100"
+      borderRadius="md"
+      borderWidth="1px"
+      width="full"
+      boxShadow="sm"
     >
-      <div>test1</div>
-      <div>test2</div>
-      <div>test3</div>
-    </Flex>
+      trip to jpan!
+    </Box>
   );
 };
-export default Navbar;
+export default TripPanel;
