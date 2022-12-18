@@ -7,6 +7,8 @@ import {
   IconButton,
   Stack,
   useColorModeValue,
+  Box,
+  Container,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
@@ -19,48 +21,57 @@ const DarkModeSwitch = () => {
   // Here's the signature
   const value = useColorModeValue('white', 'gray.800');
   return (
-    <Flex
+    <Box
       position="fixed"
       w="full"
-      zIndex="200"
+      zIndex="20"
       boxShadow="base"
-      bg={value}
       top="0"
+      as="nav"
+      bg={value}
+      // css={{ backdropFilter: 'blur(10px)' }}
     >
-      <Stack align="center" direction="row" w="full" justify="space-around">
+      <Container
+        display="flex"
+        maxW="container.md"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        {/* <Stack align="center" direction="row" w="full" justify="space-around"> */}
         <Logo></Logo>
-        <Link to="/">
-          <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
-            Home
-          </Button>
-        </Link>
+        <Flex align="center">
+          <Box>
+            <Link to="/CreateTrip">
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="CreateTrip"
+                my={5}
+                w="100%"
+              >
+                CreateTrip
+              </Button>
+            </Link>
+          </Box>
+          <Box>
+            <Link to="/TripDetails">
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="TripDetails"
+                my={5}
+                w="100%"
+              >
+                TripDetails
+              </Button>
+            </Link>
+          </Box>
 
-        <Link to="/CreateTrip">
-          <Button
-            as="a"
-            variant="ghost"
-            aria-label="CreateTrip"
-            my={5}
-            w="100%"
-          >
-            CreateTrip
-          </Button>
-        </Link>
-
-        <Link to="/TripDetails">
-          <Button
-            as="a"
-            variant="ghost"
-            aria-label="TripDetails"
-            my={5}
-            w="100%"
-          >
-            TripDetails
-          </Button>
-        </Link>
-        <Switch isChecked={isDark} onChange={toggleColorMode} />
-      </Stack>
-    </Flex>
+          <Switch isChecked={isDark} onChange={toggleColorMode} />
+        </Flex>
+        {/* </Stack> */}
+      </Container>
+    </Box>
   );
 };
 
